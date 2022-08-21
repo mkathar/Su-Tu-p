@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BitirmeProojesiModelStoreContainer" CdmEntityContainer="BitirmeProojesiEntities">
+    <EntitySetMapping Name="KayıtAlanı">
+      <EntityTypeMapping TypeName="BitirmeProojesiModel.KayıtAlanı">
+        <MappingFragment StoreEntitySet="KayıtAlanı">
+          <ScalarProperty Name="YoneticiMi" ColumnName="YoneticiMi" />
+          <ScalarProperty Name="musteriID" ColumnName="musteriID" />
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+          <ScalarProperty Name="Şifre" ColumnName="Şifre" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SiparisBilgi">
+      <EntityTypeMapping TypeName="BitirmeProojesiModel.SiparisBilgi">
+        <MappingFragment StoreEntitySet="SiparisBilgi">
+          <ScalarProperty Name="SiparisID" ColumnName="SiparisID" />
+          <ScalarProperty Name="KullaniciAdı" ColumnName="KullaniciAdı" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="SiparisTarihi" ColumnName="SiparisTarihi" />
+          <ScalarProperty Name="TelNo" ColumnName="TelNo" />
+          <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+          <ScalarProperty Name="KucukSu" ColumnName="KucukSu" />
+          <ScalarProperty Name="OrtaSu" ColumnName="OrtaSu" />
+          <ScalarProperty Name="BuyukSu" ColumnName="BuyukSu" />
+          <ScalarProperty Name="KucukTup" ColumnName="KucukTup" />
+          <ScalarProperty Name="SismanTup" ColumnName="SismanTup" />
+          <ScalarProperty Name="UzunTup" ColumnName="UzunTup" />
+          <ScalarProperty Name="SiparisTutari" ColumnName="SiparisTutari" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

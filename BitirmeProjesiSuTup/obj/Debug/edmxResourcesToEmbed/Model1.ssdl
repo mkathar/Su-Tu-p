@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BitirmeProojesiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="KayıtAlanı">
+    <Key>
+      <PropertyRef Name="musteriID" />
+    </Key>
+    <Property Name="musteriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciAdi" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Şifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Eposta" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Adres" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="YoneticiMi" Type="int" />
+  </EntityType>
+  <EntityType Name="SiparisBilgi">
+    <Key>
+      <PropertyRef Name="SiparisID" />
+    </Key>
+    <Property Name="SiparisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciAdı" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SiparisTarihi" Type="datetime" Nullable="false" />
+    <Property Name="TelNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Eposta" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="KucukSu" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrtaSu" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BuyukSu" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="KucukTup" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SismanTup" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UzunTup" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SiparisTutari" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Adres" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="KullaniciID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_SiparisBilgi_KayıtAlanı">
+    <End Role="KayıtAlanı" Type="Self.KayıtAlanı" Multiplicity="1" />
+    <End Role="SiparisBilgi" Type="Self.SiparisBilgi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KayıtAlanı">
+        <PropertyRef Name="musteriID" />
+      </Principal>
+      <Dependent Role="SiparisBilgi">
+        <PropertyRef Name="KullaniciID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BitirmeProojesiModelStoreContainer">
+    <EntitySet Name="KayıtAlanı" EntityType="Self.KayıtAlanı" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SiparisBilgi" EntityType="Self.SiparisBilgi" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_SiparisBilgi_KayıtAlanı" Association="Self.FK_SiparisBilgi_KayıtAlanı">
+      <End Role="KayıtAlanı" EntitySet="KayıtAlanı" />
+      <End Role="SiparisBilgi" EntitySet="SiparisBilgi" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
